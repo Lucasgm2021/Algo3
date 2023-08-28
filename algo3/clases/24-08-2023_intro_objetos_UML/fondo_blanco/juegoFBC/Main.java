@@ -8,5 +8,6 @@ public class Main {
 	public static void main(String[] args) {
 		JuegoFBC juegoFBC = new JuegoFBC(20);
 		juegoFBC.jugar();
+		System.out.println("Hola mundo!")
 	}
 }
