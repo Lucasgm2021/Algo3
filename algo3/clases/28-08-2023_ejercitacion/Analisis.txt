@@ -1,0 +1,29 @@
+FIUBA.
+1. Pensar en el objeto principal que representa la aplicacion, con la que interactua el usuario al realizar un input por entrada estandar (terminal).
+Al iniciar el programa, la clase Main tiene dos opciones. O contener la logica completa del objeto principal, sin crear una clase para este explicitamente. Quizas en aplicaciones mas grandes, que interactuan con otras, si tenga mas sentido crear otra clase de tipo "aplicacion", quizas interactua con otras aplicaciones dentro del mismo programa, o incluso con otros programas de terceros.
+Yo opto por crear un objeto aplicacion de momento. Quizas sea un debate muy profundo de momento.
+
+2. Pensar en los objetos que intervienen y como interactuan con la aplicación.
+ej:
+
+main:
+    AppFiuba app = new AppFiuba()
+    app.mostrarLogin()
+    String user = "";
+    String pass  = "";	
+    while user not in app.users or app.passwords(user) != pass {
+   	user = java.io.Scanner.scan();
+    	pass  = java.io.Scanner.scan();	
+    } = > quizas en un programa real seria una ventana, cuya logica seria activida por el evento de hacer click en el boton login, no un while. esto es por el stdin de la terminal.
+    app.login(pass)
+    app.mostrarInicio();
+    app.mostrarOpciones();
+    String input = java.io.Scanner.scan();
+    while input!= "4"{
+        if input =="1"{}
+        if input =="2"{}
+        if input =="3"{}
+        if input =="4"{}
+        
+    }	
+	
