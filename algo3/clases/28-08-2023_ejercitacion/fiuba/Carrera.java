@@ -1,3 +1,5 @@
+package fiuba;
+
 import java.util.ArrayList;
 
 public class Carrera {
@@ -28,5 +30,9 @@ public class Carrera {
 			Materia materia = new Materia(nombresMaterias.get(i),creditosMaterias.get(i));
 			System.out.println(materia);
 		}
+	}
+
+	public String obtenerNombreCarrera(){
+		return nombreCarrera;
 	}
 }

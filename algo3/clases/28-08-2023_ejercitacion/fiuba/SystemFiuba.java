@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package fiuba;
 
+import java.util.Scanner;
 
 public class SystemFiuba {
 	Usuario user;
