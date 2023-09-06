@@ -7,4 +7,12 @@ public class Materia {
 		nombreMateria = nombre;
 		creditosMateria = creditos;
 	}
+
+	public String obtenerNombre(){
+		return nombreMateria;
+	}
+
+	public String obtenerCreditos(){
+		return creditosMateria;
+	}
 }

@@ -22,10 +22,10 @@ public class SystemFiuba {
 				user.inscribirseCarrera();
 				break;
 				case "2":System.out.println("Opcion 2");
-				//user.marcarMateriaAprobada();
+				user.marcarMateriaAprobada();
 				break;
 				case "3":System.out.println("Opcion 3");
-				//user.consultarCarrera();
+				user.consultarCarrera();
 				break;
 				case "4":System.out.println("Ha cerrado con exito la aplicación");
 				return;  
@@ -34,6 +34,7 @@ public class SystemFiuba {
 				default: System.out.println("No existe ese ingreso, favor de volver a ingresar");
 				break;
 			}
+			System.out.println("");
 		}
 	}
 
