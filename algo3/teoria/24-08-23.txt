@@ -1,4 +1,4 @@
-Clase 1 - Teorica
+﻿Clase 1 - Teorica
 
 Introduccion al concepto de programacion orientada a objetos.
 
@@ -51,7 +51,7 @@ Diagrama=> SIMPLE.
 Como subdividir diagramas?
 
 tipos de diagramas:
-1. diagrmas de interaccion.
+1. diagramas de interaccion.
 Permite encapsular el diagrama que representa la interaccion entre 2 o mas objetos (cercanos en el diagrama principal, si estan lejos es complejo a nivel practico). Esdecir, metodos que solicitan cosas a otros objetos.
 
 2. diagramas de clases.
@@ -66,6 +66,15 @@ d. Generalizacion (es). Flecha con V de destino vacia. Subclases.  Herencia.
 e. Realizacion (implementa). Flecha delineada con V de destino vacia. Clase que necesita implementar una interfaz. Se hace en otro archivo, no dentro de la clase. Profundizar.
 f. Depedencia (usa). Flecha delineada con V de destino llena. Clase que usa dentro de sus metodos metodos de otras clases. Ej: clase calculadora usa biblioteca de funciones.
  
+
+Multiplicidad de relaciones entre clases:
+1 - uno
+0..1 / * - cero o uno
+0..* - cero o muchos
+1..* - uno o muchos
+
+
+
 Conclusiones de diagrama de clases:
 No es necesario representar todas las clases.
 No es necesario representar todas las relaciones.

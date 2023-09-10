@@ -1,0 +1,46 @@
+@startuml
+
+hide footbox
+actor "Usuario" as M
+participant "SystemFiuba" as S
+participant "Alumno" as A
+participant "Materia" as MA
+participant "Carrera" as C
+
+activate M
+
+create S 
+M --> S:<<create>>
+
+activate S
+
+create A
+S --> A:<<create>>
+create MA
+S --> MA:<<create>>
+create C
+S --> C:<<create>>
+
+M -> S:iniciar()
+S -> S: getUserInput()
+S -->>S: input
+
+loop input!="4"
+
+alt input=="1"
+S -> A:inscribirseACarrera()
+A -> A: seleccionarCarrera()
+A --> A:inputCarrera
+else alt input=="2"
+S -> A: aprobarMateria()
+A -> A: seleccionarMateria()
+A --> A:inputMateria
+else alt input=="3"
+S -> A:inscribirseACarrera()
+A -> A: seleccionarCarrera()
+A --> A:inputCarrera
+S -> S: getUserInput()
+S -->> S: input
+end alt
+end loop
+@endumll

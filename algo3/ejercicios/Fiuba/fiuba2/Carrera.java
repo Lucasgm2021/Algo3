@@ -1,5 +1,7 @@
 package fiuba2;
 
+import java.util.Map;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -7,13 +9,12 @@ public class Carrera{
 	private final String nombre;
 	private final List<Materia> materias;
 
-	public Carrera (String nombre, List<Materia> materias){
+	public Carrera (String nombre, Map<String,Materia> materias){
 		this.nombre = nombre;
-		materiasAprobadas = new ArrayList<Materia>();
-		materiasPorAprobar = new ArrayList<Materia>();
+		this.materias = new ArrayList<Materia>();
 
-		for (Materia materia:materias){
-			materias.add(materia);
+		for (String nombreMateria:materias.keySet()){
+			this.materias.add(materias.get(nombreMateria));
 		}
 	}
 

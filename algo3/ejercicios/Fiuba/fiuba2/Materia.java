@@ -9,8 +9,7 @@ public class Materia{
 		this.creditos=creditos;
 	}
 
-	public String[] obtenerInfo(){
-		String[] datos = {this.nombre,this.creditos};
-		return datos;
+	public String obtenerNombre(){
+		return this.nombre;
 	}
 }
