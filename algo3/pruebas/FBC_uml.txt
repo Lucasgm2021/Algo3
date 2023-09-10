@@ -1,0 +1,130 @@
+@startuml
+hide footbox
+skinparam roundcorner 0
+skinparam monochrome true
+
+skinparam sequence {
+  ActorBorderColor black
+  ActorBackgroundColor #F0F0F0
+  Participant underline
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor #F0F0F0
+  LifeLineBackgroundColor #F0F0F0
+}
+
+mainframe sd  El juego **Fondo Blanco de Cerveza**
+|||
+
+actor "usuario" as U
+participant "juegoFBC" as J
+participant "barril" as B
+participant "jugador1" as J1
+participant "jugador2" as J2
+
+activate U
+
+create J
+U -->> J: <<create>>
+U -> J: jugar()
+activate J
+
+create B
+J -->> B: <<create>>
+activate B
+
+create J1
+J -->> J1: <<create>>
+activate J1
+
+create J2
+J -->> J2: <<create>>
+activate J2
+
+J -> B: hayDemasiadaCerveza()
+J <<-- B: hayDemasiadaCerveza
+
+loop hayDemasiadaCerveza
+J -> J1: beber(barril)
+
+J1 -> B: calcularMaximoExtraible()
+J1 <<-- B: tope
+
+J1 -> J1: decidirCantidadABeber(tope)
+activate J1
+return cantidad
+
+J1 -> B: esImposibleBeber(cantidad)
+J1 <<-- B: esImposibleBeber
+
+loop esImposibleBeber 
+J1 -> J1: decidirCantidadABeber(tope)
+activate J1
+return cantidad
+
+J1 -> B: esImposibleBeber(cantidad)
+J1 <<-- B: esImposibleBeber
+
+end loop
+
+B <- J1: extraer(cantidad)
+
+J -> B: hayGanador()
+J <<-- B: hayGanador
+
+alt hayGanador
+J -> J1: cantarVictoria()
+else no hayGanador
+J -> B: hayPerdedor()
+J <<-- B: hayPerdedor
+
+alt hayPerdedor
+J -> J2: cantarVictoria()
+else no hayPerdedor
+J -> J2: beber(barril)
+
+J2 -> B: calcularMaximoExtraible()
+J2 <<-- B: tope
+
+J2 -> J2: decidirCantidadABeber(tope)
+activate J2
+return cantidad
+
+J2 -> B: esImposibleBeber(cantidad)
+J2 <<-- B: esImposibleBeber
+
+loop esImposibleBeber 
+J2 -> J2: decidirCantidadABeber(tope)
+activate J2
+return cantidad
+
+J2 -> B: esImposibleBeber(cantidad)
+J2 <<-- B: esImposibleBeber
+
+end loop
+
+B <- J2: extraer(cantidad)
+J -> B: hayGanador()
+J <<-- B: hayGanador
+
+alt hayGanador
+J -> J2: cantarVictoria()
+else no hayGanador
+J -> B: hayPerdedor()
+J <<-- B: hayPerdedor
+
+opt hayPerdedor
+J -> J1: cantarVictoria()
+end
+end
+end
+end
+J -> B: hayDemasiadaCerveza()
+J <<-- B: hayDemasiadaCerveza
+end
+
+deactivate J1
+deactivate J2
+deactivate B
+deactivate J
+deactivate U
+@enduml
