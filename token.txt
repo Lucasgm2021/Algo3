@@ -1,4 +1,4 @@
-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
+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 => este
 pruebas2
 
 git config --global credential.https://github.com/.usehttppath true
